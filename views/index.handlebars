@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poll App</title>
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/poll_style.css">
+    <script
+      defer
+      src="https://kit.fontawesome.com/7fa246b183.js"
+      crossorigin="anonymous"
+    ></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="header">
+                <span class="fas fa-arrow-left"></span>
+                <span>Create a New Poll</span>
+            </div>
+                <h1 class="poll-title">Poll</h1>
+                 <form class="ask-question" method="post">
+                    <input id="input-question" name ="name" type="text" class="input-question"  placeholder="Q.Ask Your question" required> 
+                 </form>
+                 <h2 class="options-title">Options</h2>
+                 <form class="options" method="post">
+                    <input id="input-option1" name ="name" type="text" class="input-option1"  placeholder="Option 1" required>
+                    <input id="input-option2" name ="name" type="text" class="input-option2"  placeholder="Option 2" required>
+                    <input id="input-option3" name ="name" type="text" class="input-option3"  placeholder="Option 3" required>
+                    <input id="input-option4" name ="name" type="text" class="input-option4"  placeholder="Option 4" required> 
+                        <div class="button button-desktop">
+                            <button class = "add-options" type="submit">Add options</button><span class="fas fa-plus-circle"></span> 
+                        </div>   
+                 </form>
+                 <div class="button button-desktop">
+                    <button class = "vote" type="submit">VOTE!</button><span class="fas fa-arrow-right"></span> 
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+

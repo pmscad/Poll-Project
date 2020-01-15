@@ -1,0 +1,34 @@
+/* Mobile version */
+@media (min-width: 300px) and (max-width: 479px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    color: #777777;
+}
+
+
+.body{
+    width: 100%;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    padding: 2me;
+    border: 1px solid black;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    padding: 2me;
+    border: 1px solid black;
+
+}
+
+}
