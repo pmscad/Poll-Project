@@ -3,6 +3,7 @@ var express = require("express");
 var session = require("express-session");
 const dotenv= require("dotenv").config();
 
+
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
