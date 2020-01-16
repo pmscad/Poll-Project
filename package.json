@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "$(npm bin)/eslint '**/*.js'",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
@@ -14,14 +20,19 @@
   "dependencies": {
     "bcryptjs": "2.4.3",
     "cors": "^2.8.5",
-    "eslint": "^6.8.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.1",
+    "husky": "^4.0.10",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }
