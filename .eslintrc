@@ -1,3 +1,9 @@
 {
-    "extends": "airbnb-base/legacy"
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "jquery": true,
+    "node": true,
+    "browser": true
+  }
 }

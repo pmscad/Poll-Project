@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "$(npm bin)/eslint '**/*.js'",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
@@ -13,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
@@ -25,6 +32,8 @@
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+
+    "eslint-plugin-import": "^2.20.0"
+
   }
 }

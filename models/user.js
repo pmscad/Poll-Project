@@ -1,20 +1,21 @@
+
 // Creating our User model
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+module.exports = function (sequelize, DataTypes) {
+  const User = sequelize.define('User', {
     // The email cannot be null, and must be a proper email before creation
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true
-      }
+        isEmail: true,
+      },
     },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   });
   return User;
 };
