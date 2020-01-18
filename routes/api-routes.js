@@ -46,4 +46,22 @@ module.exports = function(app){
             })
         }
     });
+
+    app.post(`/api/polls/new`, function(req,res){
+        const newPoll = req.body;
+        let newPollId;
+        db.Polls.create({
+            question: newPoll.question
+        }).then(result =>{
+            newPollId = result.id;
+            console.log(newPollId);
+            newPoll.answers.forEach(answers=>{
+                db.Answers.create({
+                    poll_id: newPollId,
+                    answer: answers
+                })
+            })
+        res.end();
+        })
+    })
 }
