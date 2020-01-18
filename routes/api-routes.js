@@ -1,10 +1,13 @@
 const db = require(`../models/index`)
-const Polls = require(`../models/Polls`)
-const Answers = require(`../models/Answers`)
-const Votes = require(`../models/Votes`)
 
 module.exports = function(app){
-    app.get(`/api/Polls/:id`, function(req, res){
+    app.get(`/api/polls`, function (req,res){
+        db.Polls.findAll().then( result =>{
+            res.status( 200 ).json(result);
+        })
+    })
+
+    app.get(`/api/Polls/:id`, function (req, res){
         const pollId = req.params.id;
         console.log(pollId)
         if (pollId){
@@ -12,38 +15,34 @@ module.exports = function(app){
                 where: {
                     id: pollId
                 }
-            }).then(function(result){
-                return res.json(result);
-            })
-        } else {
-            Polls.findAll().then(function(result){
-                return res.json(result);
+            }).then(result => {
+                res.status( 200 ).json(result);
             })
         }
     });
 
-    app.get(`/api/Answers/:id`, function(req, res){
-        const pollId = req.params.id;
-        if (pollId){
-            Answers.findall({
+    app.get(`/api/answers/:id`, function(req, res){
+        const answerPollId = req.params.id;
+        if (answerPollId){
+            db.Answers.findAll({
                 where: {
-                    poll_id: pollId
+                    poll_id: answerPollId
                 }
-            }).then(function(result){
-                return res.json(result);
+            }).then(result => {
+                res.status( 200 ).json(result);
             })
         }
     });
 
-    app.get(`/api/Votes/:id`, function(req, res){
-        const pollId = req.params.id;
-        if (pollId){
-            Votes.findall({
+    app.get(`/api/votes/:id`, function(req, res){
+        const votePollId = req.params.id;
+        if (votePollId){
+            db.Votes.findAll({
                 where: {
-                    answer_id: pollId
+                    answer_id: votePollId
                 }
-            }).then(function(result){
-                return res.json(result);
+            }).then(result => {
+                res.status( 200 ).json(result);
             })
         }
     });

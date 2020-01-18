@@ -1,14 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
-const seeds = require(`../seed.js`);
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
-
-
 
 fs.readdirSync(__dirname)
     .filter(
@@ -19,7 +16,6 @@ fs.readdirSync(__dirname)
         const model = sequelize.import(path.join(__dirname, file));
         db[model.name] = model;
     });
-    seeds(db);
 
 Object.keys(db).forEach(modelName => {
     if (db[modelName].associate) {
@@ -30,9 +26,9 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// db.Votes.hasMany(db.Answers, {foreignKey: `answer_id`});
-// db.Answers.belongsTo(db.Votes)
-// db.Answers.hasMany(db.Polls, {foreignKey: `poll_id`});
-// db.Polls.belongsTo(db.Answers);
+db.Votes.hasMany(db.Answers, {foreignKey: `answer_id`});
+db.Answers.belongsTo(db.Votes)
+db.Answers.hasMany(db.Polls, {foreignKey: `poll_id`});
+db.Polls.belongsTo(db.Answers);
 
 module.exports = db;
