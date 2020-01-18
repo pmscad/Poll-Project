@@ -6,11 +6,11 @@ module.exports = function(sequilize, DataTypes){
             autoIncrement: true,
             primaryKey: true
         },
-            answer_id: {
+        answer_id: {
             type: DataTypes.INTEGER ,
             allowNull: false,
         },
-            unique_id: {
+        unique_id: {
             type: DataTypes.STRING,
             allowNull: true,
         }
@@ -18,5 +18,5 @@ module.exports = function(sequilize, DataTypes){
     {
         freezeTableName: true
     });
-      return Votes;
-  };
+    return Votes;
+};
