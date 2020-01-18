@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint **/*.js --ignore-pattern node_modules",
+    "lint": "./node_modules/.bin/eslint '**/*.js'",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
