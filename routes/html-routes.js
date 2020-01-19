@@ -1,17 +1,17 @@
 const express = require("express");
-
+const path = require(path);
 const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 
 router.get("/", (req, res) => {
-  res.send("ok!");
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
 
 // Create a new question
 
 router.get("/new", (req, res) => {
-  res.send("ok!");
+  res.sendFile(path.join(__dirname + "/new.html"));
 });
 
 // Answer a new question
