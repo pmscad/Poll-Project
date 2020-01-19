@@ -79,4 +79,14 @@ module.exports = function(app){
         res.end();
         })
     })
+
+    app.post(`/api/votes/new`, function(req,res){
+        const newVote = req.body;
+        db.Votes.create({
+            answer_id: newVote.answer_id,
+            unique_id: newVote.unique_id
+        })
+        res.end();
+    })
+    
 }
