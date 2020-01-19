@@ -1,4 +1,6 @@
 const db = require(`../models/index`)
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 module.exports = function(app){
     app.get(`/api/polls`, function (req,res){
@@ -16,6 +18,19 @@ module.exports = function(app){
                     id: pollId
                 }
             }).then(result => {
+                res.status( 200 ).json(result);
+            })
+        }
+    });
+    
+    app.get(`/api/polls/search/:searchpolls`, function (req, res){
+        const searchpolls = req.params.searchpolls;
+        if (searchpolls){
+            db.Polls.findAll({
+                    where: {
+                        question: {[Op.like]: '%'+searchpolls+'%'}
+                    } 
+                }).then(result => {
                 res.status( 200 ).json(result);
             })
         }
