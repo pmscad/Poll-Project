@@ -6,13 +6,13 @@ module.exports = function(sequilize, DataTypes){
             autoIncrement: true,
             primaryKey: true
         },
-            question: {
+        question: {
             type: DataTypes.STRING,
             allowNull: false,
         }
     }, 
     {
         freezeTableName: true
-    }); 
-      return Polls;
-  };
+    });
+    return Polls;
+};
