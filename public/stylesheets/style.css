@@ -232,23 +232,70 @@
     color: white;
     text-align: center;
     padding: 1em;
+   
   }
 
   .mobile-favorite-answer {
-    width: 50%;
     background:rgb(109, 2, 68) ;
     margin-top: 2em;
-    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
-    
+    justify-content: space-between;
+  }
+
+  .vote-answer {
+    border: none;
+    background:rgb(0, 110, 0) ;
+    width: 25%;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .vote-answer:hover {
+    background:rgb(59, 0, 37) ;
   }
 
   .mobile-picked-answer {
     color: white;
     text-align: center;
     padding: 1em;
-    margin-top: 1em;
+    width: 50%;
+  }
+
+  .mobile-add-members {
+    padding: 1em 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .copy-button {
+    font-size: 15px;
+    cursor: pointer;
+    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    color: white;
+    border: none;
+    padding:0.5em;
+  }
+
+  .copy-button:hover {
+    background: rgb(109, 2, 68);
+
+  }
+
+  .mobile-votes {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .votes-button {
+    font-size: 15px;
+    cursor: pointer;
+    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    color: white;
+    border: none;
+    padding:0.5em;
   }
 
 
