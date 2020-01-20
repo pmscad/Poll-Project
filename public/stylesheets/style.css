@@ -365,14 +365,14 @@
     border: none;
     text-decoration: none;
     color: white;
-    background: linear-gradient(rgb(68, 0, 42),rgb(209, 4, 130),rgb(68, 0, 42));
+    background: rgb(175, 0, 108);
     padding: 0.5em;
     margin-right: 1em;
     cursor: pointer;
   }
 
   .create-poll:hover {
-    background: linear-gradient(rgb(20, 0, 13),rgb(92, 0, 57),rgb(20, 0, 13));
+    background:rgb(0, 110, 0) ;
     color: white;
     text-decoration: none;
   }
@@ -582,7 +582,6 @@
   }
 
   .add-members {
-    /* width: 80%; */
     padding: 1em 0;
     cursor: pointer;
     display: flex;
@@ -607,7 +606,6 @@
 
   .votes-button:hover {
     background: rgb(0, 110, 0);
-
   } 
 
   .copy-button {
@@ -623,7 +621,6 @@
 
   .copy-button:hover {
     background: rgb(0, 110, 0);
-
   }
 
 }
