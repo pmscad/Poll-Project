@@ -19,7 +19,7 @@
 
   /* Nav */
   .nav-container {
-    width: 75%;
+    width: 85%;
     top:0;
     margin: 0 auto;
     box-sizing: border-box;
@@ -32,7 +32,6 @@
   
   .logo{
     display: block;
-
   }
   
   .logo a{
@@ -40,8 +39,6 @@
     display: block;
     color: white;
   } 
-
-  
 
   .navbar {
     padding: 1em 1em;
@@ -57,12 +54,12 @@
   }
 
   .create-poll {
-    font-family: Arial, Helvetica, sans-serif;;
-    background:  rgb(109, 2, 68);
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
     border: none;
     text-decoration: none;
     color: white;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
     padding: 0.5em;
     cursor: pointer;
   }
@@ -86,9 +83,14 @@
 
 /* Container questions */
 
-
+.mobile-wrapper {
+  background: rgb(221, 221, 221);
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+}
 .body-container {
-  width: 75%;
+  width: 90%;
   height: 450px;
   margin: 0 auto;
   border: 1px solid rgb(109, 2, 68);
@@ -149,7 +151,7 @@
   text-align: center;
   font-weight: lighter;
   padding-top: 1em;
-  padding-bottom: 1em;
+ 
 }
 
 .mobile-form-container {
@@ -163,6 +165,7 @@
 .poll-question {
   display: flex;
   flex-direction: column;
+  margin-top: 1.5em;
   
 }
   input {
@@ -189,6 +192,7 @@
 
   .add {
     font-size: 15px;
+    border-radius: 15px;
     cursor: pointer;
     background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
     color: white;
@@ -207,6 +211,7 @@
   .poll-button {
     font-size: 15px;
     cursor: pointer;
+    border-radius: 15px;
     background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
     color: white;
     border: none;
@@ -217,7 +222,7 @@
 /* Favorite Question Page */
 
 .body-questions {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   
 }
@@ -236,7 +241,7 @@
   }
 
   .mobile-favorite-answer {
-    background:rgb(109, 2, 68) ;
+    border: 1px solid rgb(109, 2, 68) ;
     margin-top: 2em;
     display: flex;
     justify-content: space-between;
@@ -256,9 +261,9 @@
   }
 
   .mobile-picked-answer {
-    color: white;
+    color: rgb(102, 101, 101);
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
     width: 50%;
   }
 
@@ -272,14 +277,15 @@
   .copy-button {
     font-size: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    border-radius: 15px;
+    background: rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
   }
 
   .copy-button:hover {
-    background: rgb(109, 2, 68);
+    background: rgb(80, 0, 49);
 
   }
 
@@ -292,7 +298,8 @@
   .votes-button {
     font-size: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    border-radius: 15px;
+    background: rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
