@@ -194,7 +194,7 @@
     font-size: 15px;
     border-radius: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
@@ -212,7 +212,7 @@
     font-size: 15px;
     cursor: pointer;
     border-radius: 15px;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68) ;
     color: white;
     border: none;
     padding:0.5em;
@@ -281,6 +281,7 @@
     background: rgb(109, 2, 68);
     color: white;
     border: none;
+    margin-top: 1em;
     padding:0.5em;
   }
 
@@ -364,14 +365,14 @@
     border: none;
     text-decoration: none;
     color: white;
-    background-image: linear-gradient(rgb(68, 0, 42),rgb(209, 4, 130),rgb(68, 0, 42));
+    background: linear-gradient(rgb(68, 0, 42),rgb(209, 4, 130),rgb(68, 0, 42));
     padding: 0.5em;
     margin-right: 1em;
     cursor: pointer;
   }
 
   .create-poll:hover {
-    background-image: linear-gradient(rgb(20, 0, 13),rgb(92, 0, 57),rgb(20, 0, 13));
+    background: linear-gradient(rgb(20, 0, 13),rgb(92, 0, 57),rgb(20, 0, 13));
     color: white;
     text-decoration: none;
   }
@@ -390,7 +391,6 @@
   .wrapper {
     background: rgb(221, 221, 221);
     width: 75%;
-    height: 100%;
     margin: 0 auto;
 
   }
@@ -502,10 +502,14 @@
     font-size: 15px;
     border-radius: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
+  }
+
+  .add:hover {
+    background: rgb(0, 110, 0);
   }
 
   .add-poll {
@@ -521,18 +525,21 @@
     font-size: 15px;
     border-radius: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
   }
 
+  .poll-button:hover {
+    background: rgb(0, 110, 0);
+  }
+
   /* Question Page */
 
-  .body-questions {
-    width: 100%;
+  .body-questions-page {
+    width: 65%;
     margin: 0 auto;
-    
   }
 
   .favorite-question {
@@ -542,20 +549,17 @@
     text-align: center;
     margin-top: 2em;
     padding: 1em;
-    width: 65%;
     margin: 0 auto;
   }
 
   .favorite-answer {
     display: block;
     border: 1px solid rgb(109, 2, 68);
-    width: 65%;
     color: rgb(117, 116, 116);
     margin: 0 auto;
     margin-top: 2em;
     display: flex;
     justify-content: space-between;
-    /* padding:1em; */
   }
 
   .vote-answer {
@@ -609,6 +613,7 @@
   .copy-button {
     font-size: 15px;
     cursor: pointer;
+    margin-top: 1em;
     border-radius: 15px;
     background: rgb(109, 2, 68);
     color: white;
