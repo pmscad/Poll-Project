@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <title>Poll App</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="stylesheets/style.css" rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/b448d7d57d.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="nav-container">
-      <nav class="navbar navbar-default">
-        <h1 class="logo"><a href="index.html">Poll App</a></h1>
-        <div class="button button-desktop">
-          <a href="new.html"
-            ><button class="create-poll" type="submit">
-              Create your own Poll<span
-                class="fas fa-arrow-right"
-              ></span></button
-          ></a>
-        </div>
-      </nav>
-    </div>
-    <h2 class="pick-question mobile-pick-question">
+<head>
+  <title>Poll App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b448d7d57d.js" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+</head>
+<body>
+  <div class="nav-container">
+    <nav class="navbar navbar-default">
+      <h1 class="logo"><a href="index.html">Poll App</a></h1>
+      <div class="button button-desktop">
+        <a href="new.html"
+          ><button class="create-poll" type="submit">
+            Create your own Poll<span
+              class="fas fa-arrow-right"
+            ></span></button
+        ></a>
+      </div>
+    </nav>
+  </div>
+  <div class="wrapper mobile-wrapper">
+	<h2 class="pick-question mobile-pick-question">
       Pick a Question from below and start a Poll
-    </h2>
-    <div class="body-container body-container-desktop">
-      <div class="questions">
-        <ul>
-          <li class="link-question"><a href="#">Question 1</a></li>
-          <li class="link-question"><a href="#">Question 2</a></li>
-          <li class="link-question"><a href="#">Question 3</a></li>
-          <li class="link-question"><a href="#">Question 4</a></li>
-          <li class="link-question"><a href="#">Question 5</a></li>
-          <li class="link-question"><a href="#">Question 6</a></li>
-          <li class="link-question"><a href="#">Question 7</a></li>
-          <li class="link-question"><a href="#">Question 8</a></li>
-          <li class="link-question"><a href="#">Question 9</a></li>
-          <li class="link-question"><a href="#">Question 10</a></li>
-        </ul>
-     </div>
+  	</h2>
+  	<div class="body-container body-container-desktop">
+    <div class="questions" >
+      	<ul id="questions">
+      	</ul>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-  </body>
+  </div>
+</body>
 </html>
