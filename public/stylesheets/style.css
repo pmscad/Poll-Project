@@ -194,7 +194,7 @@
     font-size: 15px;
     border-radius: 15px;
     cursor: pointer;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68);
     color: white;
     border: none;
     padding:0.5em;
@@ -212,7 +212,7 @@
     font-size: 15px;
     cursor: pointer;
     border-radius: 15px;
-    background-image: linear-gradient(rgb(109, 2, 68),rgb(189, 6, 119),rgb(109, 2, 68));
+    background:rgb(109, 2, 68) ;
     color: white;
     border: none;
     padding:0.5em;
@@ -281,6 +281,7 @@
     background: rgb(109, 2, 68);
     color: white;
     border: none;
+    margin-top: 1em;
     padding:0.5em;
   }
 
@@ -315,7 +316,12 @@
     height: 100vh;
   }
 
-  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+  }
+
+ 
   /* Nav */
   .nav-container {
     width: 75%;
@@ -328,6 +334,16 @@
     color: white;
     background-color: rgb(109, 2, 68);
   }
+
+  .logo{
+    display: block;
+  }
+  
+  .logo a{
+    text-decoration: none;
+    display: block;
+    color: white;
+  } 
   
   .navbar {
     padding: 1em 1em;
@@ -345,17 +361,18 @@
   .create-poll {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    border-radius: 15px;
     border: none;
     text-decoration: none;
     color: white;
-    background-image: linear-gradient(rgb(68, 0, 42),rgb(209, 4, 130),rgb(68, 0, 42));
+    background: rgb(175, 0, 108);
     padding: 0.5em;
     margin-right: 1em;
     cursor: pointer;
   }
 
   .create-poll:hover {
-    background-image: linear-gradient(rgb(20, 0, 13),rgb(92, 0, 57),rgb(20, 0, 13));
+    background:rgb(0, 110, 0) ;
     color: white;
     text-decoration: none;
   }
@@ -369,6 +386,14 @@
     margin-left: 0.5em;
   }
 
+/* Body */
+
+  .wrapper {
+    background: rgb(221, 221, 221);
+    width: 75%;
+    margin: 0 auto;
+
+  }
 
   .body-container-desktop {
     width: 75%;
@@ -422,6 +447,180 @@
     cursor: pointer;
     list-style: none;
     text-decoration: none;
+  }
+
+  /* New Page */
+  .poll {
+    text-align: center;
+    padding: 1.5em;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 75%;
+    height: auto;
+  }
+
+  .poll-question {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+  }
+
+  .add-question {
+    padding: 2em;
+    font-size: 25px;
+  }
+
+  #question-text {
+    width: 100%;
+    height: 20%;
+    padding: 1em;
+  }
+  
+  input {
+    height: 50px;
+    width: 100%;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 1em;
+    border: 1px solid rgb(109, 2, 68);
+  }
+
+  .add-answer {
+    border: none;
+    text-decoration: none;
+    padding: 1em 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .add {
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    background:rgb(109, 2, 68);
+    color: white;
+    border: none;
+    padding:0.5em;
+  }
+
+  .add:hover {
+    background: rgb(0, 110, 0);
+  }
+
+  .add-poll {
+    border: none;
+    text-decoration: none;
+    padding: 0.5em 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .poll-button {
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    background:rgb(109, 2, 68);
+    color: white;
+    border: none;
+    padding:0.5em;
+  }
+
+  .poll-button:hover {
+    background: rgb(0, 110, 0);
+  }
+
+  /* Question Page */
+
+  .body-questions-page {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .favorite-question {
+    display: block;
+    background:rgb(109, 2, 68);
+    color: white;
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    margin: 0 auto;
+  }
+
+  .favorite-answer {
+    display: block;
+    border: 1px solid rgb(109, 2, 68);
+    color: rgb(117, 116, 116);
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .vote-answer {
+    border: none;
+    background:rgb(0, 110, 0) ;
+    width: 25%;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .vote-answer:hover {
+    background:rgb(59, 0, 37) ;
+  }
+
+  .picked-answer {
+    color: rgb(102, 101, 101);
+    padding: 0.5em;
+    width: 50%;
+  }
+
+  .add-members {
+    padding: 1em 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .votes {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .votes-button {
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    background: rgb(109, 2, 68);
+    color: white;
+    border: none;
+    padding:0.5em;
+  }
+
+  .votes-button:hover {
+    background: rgb(0, 110, 0);
+  } 
+
+  .copy-button {
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 1em;
+    border-radius: 15px;
+    background: rgb(109, 2, 68);
+    color: white;
+    border: none;
+    padding:0.5em;
+  }
+
+  .copy-button:hover {
+    background: rgb(0, 110, 0);
   }
 
 }
