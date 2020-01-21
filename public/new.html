@@ -17,60 +17,6 @@
   </head>
   <body>
     <div class="nav-container">
-<<<<<<< HEAD
-      <nav class="navbar navbar-default">
-        <div class="navbar-header">
-          <h1 class="logo"><a href="index.html">Poll App</a></h1>
-        </div>
-        <div class="button button-desktop">
-          <a href="new.html"
-            ><button class="create-poll" type="submit">
-              Create your own Poll<span
-                class="fas fa-arrow-right"
-              ></span></button
-          ></a>
-        </div>
-      </nav>
-    </div>
-    <h2 class="poll mobile-poll">
-      Poll
-    </h2>
-    <div class="form-container mobile-form-container">
-      <form class="poll-question" method="POST">
-        <label for="add-question">Add a Question</label>
-        <input
-          type="text"
-          placeholder="Type your question"
-          name="type-question"
-          id="question-text"
-        />
-        <label for="answer"></label>
-        <input
-          type="text"
-          placeholder="Answer 1"
-          name="type-answer"
-          id="answer-text"
-        />
-        <label for="answer"></label>
-        <input
-          type="text"
-          placeholder="Answer 2"
-          name="type-answer"
-          id="answer-text"
-        />
-      </form>
-      <div class="add-answer mobile-add-answer">
-        <a href="#"
-          ><button class="add" type="submit">
-            Add answer<span class="fas fa-plus-circle"></span></button
-        ></a>
-      </div>
-      <div class="add-poll mobile-add-poll">
-        <a href="question.html"
-          ><button class="poll-button" type="submit">
-            POLL<span class="fas fa-arrow-right"></span></button
-        ></a>
-=======
         <nav class="navbar navbar-default">
           <div class="navbar-header">
             <h1 class="logo"><a href="index.html">Poll App</a></h1>
@@ -88,20 +34,27 @@
         <form class="poll-question" method="POST">
           <label for="add-question">Add a Question</label>
           <input type="text" placeholder="Type your question" name="type-question" id="question-text" />
-          <label for="answer"></label>
-          <input type="text" placeholder="Answer 1" name="type-answer" id="answer-text" />
-          <label for="answer"></label>
-          <input type="text" placeholder="Answer 2" name="type-answer" id="answer-text" />
         </form>
-         	<div class="add-answer mobile-add-answer">
-           		<a href="#"><button class = "add" type="submit">Add answer<span class= "fas fa-plus-circle"></span></button></a>
-         	</div>
-         	<div class="add-poll mobile-add-poll">
-           		<a href="question.html"><button class = "poll-button" type="submit">POLL<span class= "fas fa-arrow-right"></span></button></a>
-         	</div>
+      </div>
+      <div class="form-container mobile-form-container">
+        <form class="poll-answers" method="POST">
+          <label for="add-answer">Add an Answer</label>
+          <input type="text" placeholder="Type your answer" name="type-answer" class="answer-text" />
+          <label for="add-answer">Add an Answer</label>
+          <input type="text" placeholder="Type your answer" name="type-answer" class="answer-text" />
+          <button class = "add" type="submit">Add answer<span class= "fas fa-plus-circle"></span></button>
+        </form>
+      </div>
+      <div class="add-members mobile-add-members">
+        <button class = "copy-button" onclick="">Invite members to vote<span class= "fas fa-plus-circle"></span></button>
+      </div>
+      <div class="add-poll mobile-add-poll">
+        <a href="question.html"><button class = "poll-button" type="submit">POLL<span class= "fas fa-arrow-right"></span></button></a>
+      </div>
 		</div>
->>>>>>> f012c8e365573ea15761d1726e79d72b465138de
       </div>
     </div>
+    <script src="poll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
