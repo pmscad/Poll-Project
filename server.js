@@ -1,4 +1,5 @@
 const express = require('express');
+require(`fetch`);
 require(`dotenv`).config(); // eslint-disable-line
 
 const PORT = process.env.PORT || 8080;
@@ -17,7 +18,7 @@ db.sequelize.sync({force:true})
     .then(() => {
         seeds(db);
         app.listen(PORT, () => {
-            console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
+            console.log(`==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`);
     });
 })   
 

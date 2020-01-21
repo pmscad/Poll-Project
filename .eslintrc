@@ -4,6 +4,9 @@
     "es6": true,
     "jquery": true,
     "node": true,
-    "browser": true
+    "browser": true,
+  },  
+  "parserOptions": {
+      "ecmaVersion": 2017
   }
 }
