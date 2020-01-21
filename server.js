@@ -26,14 +26,3 @@ db.sequelize.sync({force:true})
             console.log(`==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`);
     });
 });
-
-db.sequelize.sync({ force: true }).then(() => {
-  seeds(db);
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
