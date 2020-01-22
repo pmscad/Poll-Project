@@ -1,29 +1,31 @@
-const express = require("express");
-// const app = express();
+
 const path = require("path");
-const router = express.Router();
 
-//  Create all our routes and set up the logic within those routes where required
 
-// Index Page
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
+ // Each of the below routes just handles the HTML page that the user gets sent to.
 
-// New Poll
-router.get("/new", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/new.html"));
-});
+module.exports = function(app) {
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
 
-// New Question
-router.get("/question", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/question.html"));
-});
+  app.get("/new", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/new.html"));
+  });
 
-// Answers
-router.get("/answers", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/answers.html"));
-});
+  app.get("/question", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/question.html"));
+  });
 
-console.log(__dirname);
-module.exports = router;
+  app.get("/answers", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/answers.html"));
+  });
+
+  app.get('/question/:id/', function (req, res) {
+    res.send(req.params);
+  })
+
+};
+
+
+
