@@ -25,10 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    let id = 1;
+    const url = window.location.href;
+    const id= 1;
+    console.log(url)
     const question = document.querySelector(`#question-here`);
     const answers = document.querySelector(`#answers-here`);
-    console.log(answers)
     getPollById(id).then(data => {
         const questionSelected = 
             `<p class="picked-question mobile-picked-question" id="${data.id}">${data.question}</p>`;
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     getAnswersById(id).then(data => {
         data.forEach(answer =>{
-            console.log(answer)
         const answersSelected = 
         `<div class="favorite-answer mobile-favorite-answer">
             <p class="picked-answer mobile-picked-answer">${answer.answer}</p>
