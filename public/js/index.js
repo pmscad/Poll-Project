@@ -10,20 +10,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json()
         return data;
     }
+    function clearQuestions(){
+        if (questions.hasChildNodes){
+            while(questions.firstChild){
+                questions.removeChild(questions.firstChild);
+            }
+        }
+    }
     
     const questions = document.querySelector(`#questions`);
+    const searchBar = document.querySelector(`#search-bar`);
+    const searchFor = document.querySelector(`#search-for`);
+    const url = window.location.href;
+    console.log(url);
     
     getAllPolls()
         .then(data => {
             data.forEach(poll => {
             const questionCard = 
                 `<li class="link-question">
-                    <a href="http://localhost:8080/poll/${poll.id}">
+                    <a href= "${url}question/${poll.id}">
                         ${poll.question}
                     </a>
                 </li>`;
-                questions.innerHTML += questionCard;
+            questions.innerHTML += questionCard;
         })  
     });
-    getPollBySearch().then(console.log);
+
+    searchFor.addEventListener(`click`, (event) =>{
+        clearQuestions()
+        event.preventDefault();
+        getPollBySearch(searchBar.value)
+            .then(data => {
+                data.forEach(poll => {
+                const questionCard = 
+                    `<li class="link-question">
+                        <a href= "${url}question/${poll.id}">
+                            ${poll.question}
+                        </a>
+                    </li>`;
+                questions.innerHTML += questionCard;
+            })  
+        });
+    });
 });

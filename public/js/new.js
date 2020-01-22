@@ -1,3 +1,11 @@
+
+const formPollAnswers = document.querySelector(`.poll-answers`);
+// const copyUrlButton = document.querySelector(`.copy-button`);
+const addButton = document.querySelector (`#add`);
+const createPoll = document.querySelector(`#poll-button`);
+const questionText = document.querySelector(`#question-text`);
+const answersForQuestion =[];
+
 async function postNewQuestion(question , answers) {
     await fetch('http://localhost:8080/api/polls/new', {
       method: 'POST',
@@ -12,5 +20,23 @@ async function postNewQuestion(question , answers) {
       body: JSON.stringify({ "question": question, "answers": answers})
     });
 }
-  
-postNewQuestion( "is this working?", [ "elephant", "no", "terrible"] )
+
+addButton.addEventListener (`click`, (event) => {
+    event.preventDefault();
+    function newElement() {
+        let input = document.createElement("input")
+        input.className = `answer-text`;
+        input.placeholder = `Type your answer`
+        formPollAnswers.insertBefore(input, addButton);
+    }
+    newElement();
+});
+
+createPoll.addEventListener(`click`, (event)=>{ 
+    const answerText = document.querySelectorAll(`.answer-text`);
+    event.preventDefault()
+    answerText.forEach(answer =>{
+        answersForQuestion.push(answer.value)
+    });
+    postNewQuestion( questionText.value, answersForQuestion );
+})
