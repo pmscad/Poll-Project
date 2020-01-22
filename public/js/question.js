@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    let id = 1;
+    let id;
     const question = document.querySelector(`#question-here`);
     const answers = document.querySelector(`#answers-here`);
     console.log(answers)

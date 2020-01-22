@@ -1,17 +1,35 @@
 
 const path = require("path");
+const express = require('express');
+const bodyParser = require('body-parser');
+const routers = express.Router();
 
+const app = express();
 
- // Each of the below routes just handles the HTML page that the user gets sent to.
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-module.exports = function(app) {
+ 
+ const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
+  app.post("/", urlencodedParser, function(req, res) {
+    console.log(req.body);
+      res.render('question', {data: req.body});
+  })
+
   app.get("/new", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/new.html"));
   });
+
+  app.post("/new", urlencodedParser, function(req, res) {
+    console.log(req.body);
+      res.render('question', {data: req.body});
+  })
 
   app.get("/question", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/question.html"));
@@ -25,7 +43,6 @@ module.exports = function(app) {
     res.send(req.params);
   })
 
-};
 
-
+  module.exports = routers;
 
