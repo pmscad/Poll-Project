@@ -3,10 +3,49 @@ module.exports = function(db) {
         answer_id: "1"
     })
     db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "1"
+    })
+    db.Votes.create({
+        answer_id: "2"
+    });
+    db.Votes.create({
+        answer_id: "2"
+    });
+    db.Votes.create({
+        answer_id: "2"
+    });
+    db.Votes.create({
         answer_id: "2"
     });
     db.Votes.create({
         answer_id: "3"
+    });
+    db.Votes.create({
+        answer_id: "4"
     });
     db.Votes.create({
         answer_id: "4"

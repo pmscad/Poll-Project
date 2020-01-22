@@ -4,7 +4,6 @@ const formPollAnswers = document.querySelector(`.poll-answers`);
 const addButton = document.querySelector (`#add`);
 const createPoll = document.querySelector(`#poll-button`);
 const questionText = document.querySelector(`#question-text`);
-const answerText = document.querySelectorAll(`.answer-text`);
 const answersForQuestion =[];
 
 async function postNewQuestion(question , answers) {
@@ -33,7 +32,8 @@ addButton.addEventListener (`click`, (event) => {
     newElement();
 });
 
-createPoll.addEventListener(`click`, (event)=>{
+createPoll.addEventListener(`click`, (event)=>{ 
+    const answerText = document.querySelectorAll(`.answer-text`);
     event.preventDefault()
     answerText.forEach(answer =>{
         answersForQuestion.push(answer.value)
