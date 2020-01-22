@@ -12,17 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     const questions = document.querySelector(`#questions`);
+    const url = window.location.href;
+    console.log(url);
     
     getAllPolls()
         .then(data => {
             data.forEach(poll => {
             const questionCard = 
                 `<li class="link-question">
-                    <a href="http://localhost:8080/poll/${poll.id}">
+                    <a href= "${url}question/${poll.id}">
                         ${poll.question}
                     </a>
                 </li>`;
-                questions.innerHTML += questionCard;
+            questions.innerHTML += questionCard;
         })  
     });
     getPollBySearch().then(console.log);
