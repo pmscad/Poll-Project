@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     getPollById(id)
         .then(poll=> {
             const questionCard = 
-                `<h2 class="question_answered">
+                `<div class="wrapper mobile-wrapper">
+                    <h2 class="poll mobile-poll question_answered">
                         ${poll.question}
-                </h2>`;
+                    </h2>`;
             question.innerHTML += questionCard;
         })  
       
@@ -39,16 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data =>{
                     const answerCard = 
-                    `<div class="answer">
-                        <p class="answer-text">
-                            ${answer.answer}
-                        </p>
-                        <div class="votes-received" id="${answer.id}">
-                            <p class="voute-count">
-                                ${voteCount[0].length}
-                            </p>
-                        </div>
-                    </div>`;
+                        `<tr> ${answer.answer} </tr>
+                        <tr> ${voteCount[0].length} </tr> <br>`;
                     answerToQuestion.innerHTML += answerCard;
                     console.log(data)
                 })
