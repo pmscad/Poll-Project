@@ -26,5 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
         })  
     });
     getPollBySearch().then(console.log);
-    
 });
