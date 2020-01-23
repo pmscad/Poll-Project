@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return data;
     }
 
-    const id = 1;
+    const queryString = window.location.search;
+    // console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
+    // console.log(url)
     const question =document.querySelector(`#answered-question`);
     const answerToQuestion = document.querySelector(`#answers`);
 

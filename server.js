@@ -1,5 +1,6 @@
 
 const express = require('express');
+const cors = require('cors');
 
 
 require(`fetch`);
@@ -15,11 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+app.use(cors());
 
-// require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
-const htmlRoutes = require("./routes/html-routes.js");
-app.use(htmlRoutes);
+require("./routes/html-routes.js")(app);
 
 db.sequelize.sync({force:true})
     .then(() => {

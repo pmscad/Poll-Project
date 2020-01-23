@@ -4,7 +4,7 @@ const copyUrlButton = document.querySelector(`.copy-button`);
 const addButton = document.querySelector (`.add`);
 
 
-formPollAnswers.addEventListener (`click`, (event) => {
+formPollAnswers.addEventListener (`submit`, (event) => {
     event.preventDefault();
     newElement();
 });

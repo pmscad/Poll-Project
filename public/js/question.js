@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // get the id from url 
+    // need to use the id from the db 
+    //pop into html page
+   
+
     async function getPollById(Id){
         const response = await fetch(`http://localhost:8080/api/polls/${Id}`);
         const data = await response.json()
@@ -26,7 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     const url = window.location.href;
-    const id= 1;
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
     console.log(url)
     const question = document.querySelector(`#question-here`);
     const answers = document.querySelector(`#answers-here`);
@@ -47,11 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const voteButtons = document.querySelectorAll(`.vote-answer`);
         voteButtons.forEach(voteButton =>{
             voteButton.addEventListener(`click`, (event) =>{
+                event.preventDefault();
                 console.log(`Voting for ${event.target.id}`)
                 postNewVote(event.target.id);
+                window.location.replace( `/answers?id=${id}`);
+                console.log( window.location.href)
             }) 
         })
         })
     });
-    
 });
