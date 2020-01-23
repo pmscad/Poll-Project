@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const id = 1;
     const question =document.querySelector(`#answered-question`);
-    const answerToQuestion = document.querySelector(`#answers`);
+    let answerAndVotes = [];
+    let questionAnswered;
 
     getPollById(id)
         .then(poll=> {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${poll.question}
                     </h2>`;
             question.innerHTML += questionCard;
+            questionAnswered = poll.question;
         })  
       
     getAnswersById(id)
@@ -35,16 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
             answers.forEach(answer =>{
                 const voteCount = [];
                 getVotesById(answer.id)
-                .then(vote =>{
-                    voteCount.push(vote);
-                })
-                .then(data =>{
-                    const answerCard = 
-                        `<tr> ${answer.answer} </tr>
-                        <tr> ${voteCount[0].length} </tr> <br>`;
-                    answerToQuestion.innerHTML += answerCard;
-                    console.log(data)
-                })
-            })  
+                    .then(vote =>{
+                        voteCount.push(vote);
+                    })
+                    .then(() =>{
+                        let answerToGraph = {
+                            name : answer.answer,
+                            data : [voteCount[0].length]
+                        }
+                        answerAndVotes.push(answerToGraph);
+                    })
+                    .then(() => {
+                        window.Highcharts.chart('container', {
+                        chart: {
+                            type: 'bar'
+                        },
+                        title: {
+                            text: questionAnswered
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Votes Received'
+                            }
+                        },
+                        series: answerAndVotes
+                        });
+                    })
+            })
+
         })
 });

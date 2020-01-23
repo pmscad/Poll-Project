@@ -1,7 +1,5 @@
-
 const express = require('express');
 require(`fetch`);
-
 require(`dotenv`).config(); // eslint-disable-line
 
 const PORT = process.env.PORT || 8080;
