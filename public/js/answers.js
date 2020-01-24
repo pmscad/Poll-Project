@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const queryString = window.location.search;
-    // console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id')
-    // console.log(url)
     const question =document.querySelector(`#answered-question`);
     const answerToQuestion = document.querySelector(`#answers`);
 
@@ -41,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 getVotesById(answer.id)
                 .then(vote =>{
                     voteCount.push(vote);
+                    console.log(voteCount);
                 })
                 .then(data =>{
                     const answerCard = 

@@ -1,4 +1,3 @@
-
 const path = require("path");
 
 module.exports = function(app) {
@@ -38,14 +37,4 @@ module.exports = function(app) {
     const newPage = req.body;
       res.json(newPage);
   })
-
-  // app.post("/answers", function(req, res) {
-  //   const answersPage = req.body;
-  //     res.sendFile(answersPage);
-  // })
-
-  // app.post("/questions", function(req, res) {
-  //   const questionPage = req.body;
-  //     res.sendFile(questionPage);
-  // });
 };

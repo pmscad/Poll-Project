@@ -1,8 +1,6 @@
-
 const formPollAnswers = document.querySelector(`.poll-answers`);
 const copyUrlButton = document.querySelector(`.copy-button`);
 const addButton = document.querySelector (`.add`);
-
 
 formPollAnswers.addEventListener (`submit`, (event) => {
     event.preventDefault();
@@ -15,7 +13,6 @@ function newElement() {
     formPollAnswers.insertBefore(input, addButton);
 }
 
-
 const copyToClipBoard = (str) =>
 {
     const el = document.createElement('textarea');
@@ -25,6 +22,7 @@ const copyToClipBoard = (str) =>
     document.execCommand('copy');
     document.body.removeChild(el);
 };
+
 copyUrlButton.addEventListener(`click`,function(){
     
     let copyUrl =  window.location.href;

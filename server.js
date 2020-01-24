@@ -1,11 +1,7 @@
-
 const express = require('express');
 const cors = require('cors');
-
-
 require(`fetch`);
-
-require(`dotenv`).config(); // eslint-disable-line
+require(`dotenv`).config();
 
 const PORT = process.env.PORT || 8080;
 const db = require("./models");

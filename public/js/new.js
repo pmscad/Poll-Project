@@ -1,6 +1,4 @@
-
 const formPollAnswers = document.querySelector(`.poll-answers`);
-// const copyUrlButton = document.querySelector(`.copy-button`);
 const addButton = document.querySelector (`#add`);
 const createPoll = document.querySelector(`#poll-button`);
 const questionText = document.querySelector(`#question-text`);
@@ -39,4 +37,4 @@ createPoll.addEventListener(`click`, (event)=>{
         answersForQuestion.push(answer.value)
     });
     postNewQuestion( questionText.value, answersForQuestion );
-})
+});
