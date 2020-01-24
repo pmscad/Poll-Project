@@ -16,7 +16,11 @@ async function postNewQuestion(question , answers) {
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
       body: JSON.stringify({ "question": question, "answers": answers})
-    });
+    }).then(
+        res =>res.json()
+    ).then(function(res){
+        window.location.replace( `/questions?id=${res.newPollId}`);
+    })
 }
 
 addButton.addEventListener (`click`, (event) => {
