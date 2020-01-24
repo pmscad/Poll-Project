@@ -86,18 +86,6 @@ module.exports = function(db) {
     db.Votes.create({
         answer_id: "16"
     });
-    db.Votes.create({
-        answer_id: "17"
-    });
-    db.Votes.create({
-        answer_id: "18"
-    });
-    db.Votes.create({
-        answer_id: "19"
-    });
-    db.Votes.create({
-        answer_id: "20"
-    });
     db.Answers.create({
         poll_id: "1",
         answer: "Javascript"
