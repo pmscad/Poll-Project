@@ -21,15 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const questions = document.querySelector(`#questions`);
     const searchBar = document.querySelector(`#search-bar`);
     const searchFor = document.querySelector(`#search-for`);
-    const url = window.location.href;
-    console.log(url);
     
     getAllPolls()
         .then(data => {
             data.forEach(poll => {
             const questionCard = 
                 `<li class="link-question">
-                    <a href= "${url}question/${poll.id}">
+                    <a href= "/questions?id=${poll.id}">
                         ${poll.question}
                     </a>
                 </li>`;
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.forEach(poll => {
                 const questionCard = 
                     `<li class="link-question">
-                        <a href= "${url}question/${poll.id}">
+                        <a href="/questions?id=${poll.id}">
                             ${poll.question}
                         </a>
                     </li>`;

@@ -1,31 +1,40 @@
-
 const path = require("path");
 
-
- // Each of the below routes just handles the HTML page that the user gets sent to.
-
 module.exports = function(app) {
+
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, '../views/index.html'));
   });
 
   app.get("/new", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/new.html"));
-  });
-
-  app.get("/question", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/question.html"));
+    res.sendFile(path.join(__dirname, '../views/new.html'));
   });
 
   app.get("/answers", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/answers.html"));
+    res.sendFile(path.join(__dirname, '../views/answers.html'));
   });
 
-  app.get('/question/:id/', function (req, res) {
-    res.send(req.params);
+  app.get("/questions", (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/question.html'));
+  });
+
+  app.get('/questions/:id', function (req, res) {
+    res.sendFile(path.join(__dirname, `../views/questions/${req.params.id}`));
+   
+  });
+
+  app.get('/answers/:id', function (req, res) {
+    res.sendFile(path.join(__dirname, `../views/answers/${req.params.id}`));
+  });
+
+  app.post("/", function(req, res) {
+    // console.log(req.params.id);
+    const homePage = req.body;
+      res.json(homePage);
   })
 
+  app.post("/new", function(req, res) {
+    const newPage = req.body;
+      res.json(newPage);
+  })
 };
-
-
-

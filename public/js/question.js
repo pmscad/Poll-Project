@@ -25,16 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    const url = window.location.href;
-    const id= 1;
-    console.log(url)
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
     const question = document.querySelector(`#question-here`);
     const answers = document.querySelector(`#answers-here`);
+
     getPollById(id).then(data => {
         const questionSelected = 
             `<p class="picked-question mobile-picked-question" id="${data.id}">${data.question}</p>`;
             question.innerHTML += questionSelected;
     });
+
     getAnswersById(id).then(data => {
         data.forEach(answer =>{
         const answersSelected = 
@@ -47,11 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const voteButtons = document.querySelectorAll(`.vote-answer`);
         voteButtons.forEach(voteButton =>{
             voteButton.addEventListener(`click`, (event) =>{
+                event.preventDefault();
                 console.log(`Voting for ${event.target.id}`)
                 postNewVote(event.target.id);
+                window.location.replace( `/answers?id=${id}`);
+                console.log( window.location.href)
             }) 
         })
         })
     });
-    
 });
