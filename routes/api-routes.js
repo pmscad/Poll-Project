@@ -76,7 +76,7 @@ module.exports = function(app){
                     answer: answers
                 })
             })
-        res.end();
+            res.send({newPollId})
         })
     })
 
