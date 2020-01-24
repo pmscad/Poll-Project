@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="30" />
     <link href="stylesheets/style.css" rel="stylesheet">
     <script src="js/answers.js"></script>
     <script src="https://kit.fontawesome.com/b448d7d57d.js" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap" rel="stylesheet">
     <title>Votes</title>
 </head>
@@ -23,8 +25,7 @@
       <div class="wrapper mobile-wrapper">
         <div class="answered-question" id ="answered-question"></div>
         <div class="answers-voted-for form-container mobile-form-container" id="answers">
-          <td> Answers </td>
-          <td> Votes </td><br>
+          <div id="container" style="width:100%; height:400px;"></div>
         </div>
       </div>
     </div>
